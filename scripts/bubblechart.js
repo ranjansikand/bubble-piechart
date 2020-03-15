@@ -1,5 +1,3 @@
-// https://vallandingham.me/bubble_charts_with_d3v4.html
-
 function bubblechart(data, svg, selectedgenre) {
   clearSVG(svg);
   // begin sloppy genre encoding
@@ -166,9 +164,6 @@ function producebubble(data, svg, w, h, colorBudget, colorRevenue, selectedgenre
       pie = d3.pie();
 
   var nodeData = bubble(root).children;
-
-  console.log(nodeData);
-  console.log(data);
 
   var svg = d3.select(svg);
 
@@ -379,9 +374,9 @@ function drawRadial(data, selectedgenre, svg, height, width) {
     var d = width;
   }
 
-  const chartRadius = d/4;
+  const chartRadius = d/3;
 
-  const color = d3.scaleOrdinal().range(["#b7dfeb","#bdc9e1","#74a9cf","#0570b0","#292061"]);
+  const color = d3.scaleOrdinal().range(["#b7dfeb","#bdc9e1","#74a9cf","#0570b0","#03456b"]);
 
   let svgRadial = d3.select(svg).append('svg')
     .attr('width', width)
@@ -434,6 +429,7 @@ function drawRadial(data, selectedgenre, svg, height, width) {
         .attr('r', (d, i) => getOuterRadius(i) + arcPadding);
 
       radialAxis.append('text')
+        .attr('font-size', '9px')
         .attr('font-weight', 'bold')
         .attr('x', labelPadding)
         .attr('y', (d, i) => -getOuterRadius(i) + arcPadding)
