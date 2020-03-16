@@ -3,6 +3,11 @@
     height: 50%;
 }
 
+.para {
+    width: 50%;
+    height: 50%;
+}
+
 path.bubblearc:hover {
   opacity: 0.6;
   stroke: black;
